@@ -10,12 +10,12 @@ def read_voltage() -> int:
     return int(data)
 
 
-def set_nplc(nplc):
+def set_nplc(nplc: int) -> None:
     ser.write(f"SET_NPLC {nplc}\n".encode())
     time.sleep(0.1)
 
 
-def convert_to_voltage(value):
+def convert_to_voltage(value: int) -> float:
     return value * (3.3 / 1023)
 
 
